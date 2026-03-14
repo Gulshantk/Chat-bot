@@ -1,0 +1,45 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "PromptAPI Google Search",
+    "description": "OpenAPI specification for accessing Google Search via PromptAPI"
+  },
+  "host": "api.promptapi.com",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/google_search": {
+      "get": {
+        "summary": "Search Google via PromptAPI",
+        "description": "Performs a Google search using PromptAPI",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "description": "Search query string",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "apikey",
+            "in": "header",
+            "description": "API key for authentication",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful search response"
+          },
+          "401": {
+            "description": "Unauthorized - invalid API key"
+          }
+        }
+      }
+    }
+  }
+}
